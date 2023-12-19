@@ -5,8 +5,17 @@ body {
     background-color: #ffd49c;
 }
 
+.biolink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    color: black;
+    width: 15vw;
+    margin: auto; 
+}
+
 .heading {
-    
     background-color: #f57c18;
     color: white;
     position: fixed;
