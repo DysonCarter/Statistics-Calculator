@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binomial Distribution</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class = heading><h1>Statistics Calculator</h1></div>
+    <h2 style="text-align:center;">Binomial:</h2>
+    <form id="biForm">
+        <label>x:</label>
+        <input type="number" id="x" step="1" placeholder='Number of "Wins"' required>
+
+        <label">p:</label>
+        <input type="number" id="p" step="0.01" placeholder="Probablity of Success" required>
+    
+        <label>n:</label>
+        <input type="number" id="n" step="1" placeholder="Number of Trials" required>
+
+        <button onclick="binomial()">Calculate</button>
+    </form>
+
+    <p id="result"></p>
+    
+    <script src="script.js"></script>
+</body>
+</html>
