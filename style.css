@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding-top: 75px; 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: #ffd49c;
+}
+
+.heading {
+    
+    background-color: #f57c18;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding-left: 30px;
+    height: 75px; 
+}
+
+
+.buttonGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 350px);
+    justify-content: center;
+    padding-top: 10px;
+    gap: 10px;
+}
+
+.buttonGrid button {
+    width: 350px;
+    height: 150px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: x-large;
+    border-radius: 10px;
+    background-color: #f0fdff;
+}
+
+.buttonGrid button:hover {
+    background-color: #d3eaed;
+    cursor:pointer;
+}
