@@ -1,4 +1,7 @@
 //Functions for redirect buttons
+function goToHome(){
+    window.location.href = "home.html";
+}
 function goToNormal(){
     window.location.href = "normal.html";
 }
