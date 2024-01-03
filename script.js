@@ -49,8 +49,6 @@ function binomial(event) {
     // Display the result
     document.getElementById('result').textContent = `Odds of ${x} wins in ${n} trials = ` + result.toFixed(4);
 }
-
-// Assuming you have a form with the id 'binomialForm'
 document.getElementById('binomialForm').addEventListener('submit', binomial);
 
 
