@@ -38,7 +38,7 @@ function binomial(){
 
     var result = ( choose(n,x) * Math.pow(p,x) * Math.pow(1-p, n-x)) //by definition of binomial
     // Display the result
-    document.getElementById('result').textContent = 'Binomial Distribution: ' + result.toFixed(4);  
+    document.getElementById('result').textContent = `Odds of ${x} wins in ${n} trials = ` + result.toFixed(4);  
 }
 
 //Math Functions
