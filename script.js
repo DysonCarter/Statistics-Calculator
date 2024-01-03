@@ -34,7 +34,7 @@ function binomial(){
     var n = parseInt(document.getElementById('n').value);
 
     // Check if the input values are valid
-    if (isNaN(p) || isNaN(n) || p < 0 || p > 1 || n <= 0 || x > n) {
+    if (isNaN(p) || isNaN(n) || isNaN(x) || p < 0 || p > 1 || n <= 0 || x < 0 || x > n) {
         alert('Please enter valid values for p and n.');
         return;
     }
@@ -42,6 +42,28 @@ function binomial(){
     var result = ( choose(n,x) * Math.pow(p,x) * Math.pow(1-p, n-x)) //by definition of binomial
     // Display the result
     document.getElementById('result').textContent = `Odds of ${x} wins in ${n} trials = ` + result.toFixed(4);  
+}
+
+function nb() {
+    var x = parseInt(document.getElementById('x').value);
+    var k = parseInt(document.getElementById('k').value);
+    var p = parseFloat(document.getElementById('p').value);
+    var r = parseInt(document.getElementById('r').value);
+
+    if(isNaN(k)){
+        k = x - r;
+    }
+
+    // Check if the input values are valid
+    if (isNaN(p) || isNaN(r) || (isNaN(k)) || p < 0 || p > 1 || r <= 0 || k < r){
+        alert('Please enter valid values for p, r, and k/x.');
+        return;
+    }
+
+    var result = (choose(k + r - 1, k) * Math.pow(1 - p, k) * Math.pow(p, r)); // by definition of negative binomial
+
+    // Display the result
+    document.getElementById('result').textContent = `Odds of ${r} successes given ${k} failures = ` + result.toFixed(4);
 }
 
 //Math Functions
