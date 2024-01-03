@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negative Binomial Distribution</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class = heading onclick="goToHome()"><h1>Statistics Calculator</h1></div>
+    <h2 style="text-align:center;">Negative Binomial:</h2>
+    <div class = calculator>
+    <form>
+        <label for="p">p:</label>
+        <input type="number" id="p" step="0.01" placeholder="Probablity of success on trial" required>
+    
+        <label for="r">r:</label>
+        <input type="number" id="r" step="1" placeholder="Number of wins before ending expirement" required>
+
+        <label for="k">k:</label>
+        <input type="number" id="k" step="1" placeholder='Number of failures before r'>
+
+        <p>or</p>
+
+        <label for="x">x:</label>
+        <input type="number" id="x" step="1" placeholder='Number of trials before r'>
+
+        <button onclick="nb()">Calculate</button>
+        <p id="result"></p>
+    </form>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
