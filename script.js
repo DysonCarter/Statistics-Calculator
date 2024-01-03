@@ -66,6 +66,23 @@ function nb() {
     document.getElementById('result').textContent = `Odds of ${r} successes given ${k} failures = ` + result.toFixed(4);
 }
 
+function poisson(){
+    var lambda = parseFloat(document.getElementById("lambda").value);
+    var x = parseInt(document.getElementById('x').value);
+    var e = 2.71828;
+
+    // Check if the input values are valid
+    if (isNaN(lambda) || isNaN(x) || lambda < 0 || x < 0){
+        alert('Please enter valid values for λ and x');
+        return;
+    }
+
+    var result = (Math.pow(lambda, x) * Math.pow(e, -1 * lambda))/factorial(x);
+
+    // Display the result
+    document.getElementById('result').textContent = `Odds of ${x} events in the given time = ` + result.toFixed(4);
+}
+
 //Math Functions
 function choose(n, r) {
     return factorial(n) / (factorial(r) * factorial(n - r));
