@@ -122,6 +122,23 @@ function normal() {
     document.getElementById('result').innerHTML = `Z score = ` + z.toFixed(4) + `<br> Probability of ${x} or less = ` + result.toFixed(4) + `<br> Probability of ${x} or greater = ` + (1 - result).toFixed(4);
 }
 
+function exponential() {
+    var lambda = parseFloat(document.getElementById("lambda").value);
+    var x = parseFloat(document.getElementById('x').value);
+    var e = 2.71828;
+
+    // Check if the input values are valid
+    if (isNaN(lambda) || isNaN(x) || lambda <= 0 || x < 0) {
+        alert('Please enter valid values for λ and x');
+        return;
+    }
+
+    var result = lambda * Math.pow(e, -1 * lambda * x);
+
+    // Display the result
+    document.getElementById('result').textContent = `Probability of exceeding ${x} units of time = ` + result.toFixed(4);
+}
+
 
 
 
