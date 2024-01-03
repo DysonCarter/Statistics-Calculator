@@ -30,7 +30,10 @@ function goToToT(){
 
 
 //Functions for calculation
-function binomial(){
+function binomial(event) {
+    // Prevent the default form submission behavior
+    event.preventDefault();
+
     var x = parseInt(document.getElementById('x').value);
     var p = parseFloat(document.getElementById('p').value);
     var n = parseInt(document.getElementById('n').value);
@@ -41,10 +44,15 @@ function binomial(){
         return;
     }
 
-    var result = ( choose(n,x) * Math.pow(p,x) * Math.pow(1-p, n-x)) //by definition of binomial
+    var result = (choose(n, x) * Math.pow(p, x) * Math.pow(1 - p, n - x)); // by definition of binomial
+
     // Display the result
-    document.getElementById('result').textContent = `Odds of ${x} wins in ${n} trials = ` + result.toFixed(4);  
+    document.getElementById('result').textContent = `Odds of ${x} wins in ${n} trials = ` + result.toFixed(4);
 }
+
+// Assuming you have a form with the id 'binomialForm'
+document.getElementById('binomialForm').addEventListener('submit', binomial);
+
 
 function nb() {
     var x = parseInt(document.getElementById('x').value);
