@@ -10,6 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     padding-top: 50px;
+    padding-bottom: 50px;
     color: black;
     width: 15vw;
     margin: auto; 
@@ -25,7 +26,6 @@ body {
     height: 75px; 
     cursor: pointer;
 }
-
 
 .buttonGrid {
     display: grid;
