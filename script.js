@@ -27,6 +27,8 @@ function goToToT(){
     window.location.href = "t.html";
 }
 
+
+
 //Functions for calculation
 function binomial(){
     var x = parseInt(document.getElementById('x').value);
@@ -82,6 +84,47 @@ function poisson(){
     // Display the result
     document.getElementById('result').textContent = `Odds of ${x} events in the given time = ` + result.toFixed(4);
 }
+
+function normal() {
+    var x = parseFloat(document.getElementById("x").value);
+    var sd = parseFloat(document.getElementById("sd").value);
+    var mean = parseFloat(document.getElementById("mean").value);
+
+    // Check if the input values are valid
+    if (isNaN(sd) || isNaN(x) || isNaN(mean) || sd < 0) {
+        alert('Please enter valid values for σ, μ, and x');
+        return;
+    }
+
+    // Define the error function
+    function erf(x) {
+        // A simple approximation of the error function
+        var a1 =  0.254829592;
+        var a2 = -0.284496736;
+        var a3 =  1.421413741;
+        var a4 = -1.453152027;
+        var a5 =  1.061405429;
+        var p  =  0.3275911;
+
+        var sign = (x < 0) ? -1 : 1;
+        x = Math.abs(x);
+
+        var t = 1.0 / (1.0 + p * x);
+        var y = ((((a5 * t + a4) * t) + a3) * t + a2) * t + a1;
+        return sign * (1.0 - y * Math.exp(-x * x));
+    }
+
+    // Calculate the standard normal distribution using cumulative distribution function (CDF)
+    var z = (x - mean) / sd;
+    var result = 0.5 * (1 + erf(z));
+
+    // Display the result
+    document.getElementById('result').innerHTML = `Z score = ` + z.toFixed(4) + `<br> Probability of ${x} or less = ` + result.toFixed(4) + `<br> Probability of ${x} or greater = ` + (1 - result).toFixed(4);
+}
+
+
+
+
 
 //Math Functions
 function choose(n, r) {

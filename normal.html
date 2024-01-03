@@ -7,8 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class = heading><h1>Statistics Calculator</h1></div>
+    <div class = heading onclick="goToHome()"><h1>Statistics Calculator</h1></div>
     <h2 style="text-align:center;">Normal Distribution:</h2>
+    <div class = calculator>
+    <form>
+        <label for="mean">μ:</label>
+        <input type="number" id="mean" step="0.01" placeholder='Mean' value="0" required>
+
+        <label for="sd">σ:</label>
+        <input type="number" id="sd" step="0.01" placeholder="Standard Deviation" value="1" required>
+    
+        <label for="x">x:</label>
+        <input type="number" id="x" step="0.01" placeholder="Enter a Number" required>
+
+        <button onclick="normal()">Calculate</button>
+        <p id="result"></p>
+    </form>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>
