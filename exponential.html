@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exponential Distribution</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class = heading onclick="goToHome()"><h1>Statistics Calculator</h1></div>
+    <h2 style="text-align:center;">Exponential Distribution:</h2>
+    <div class = calculator>
+    <form>
+        <label for="lambda">λ:</label>
+        <input type="number" id="lambda" step="0.01" placeholder='Rate Parameter' required>
+    
+        <label for="x">x:</label>
+        <input type="number" id="x" step=".01" placeholder="Amount of Time" required>
+
+        <button onclick="exponential()">Calculate</button>
+        <p id="result"></p>
+    </form>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
